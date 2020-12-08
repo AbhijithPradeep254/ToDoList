@@ -1,0 +1,58 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+body nav
+{
+    background-color:rgb(219, 219, 219);
+    height: 60px;
+}
+
+body
+{
+    background-color: antiquewhite;
+}
+
+table
+{
+    width: 100%;
+}
+table, th, td
+{
+    border: 1px solid black;
+    text-align: center;
+}
+
+
+#formDiv
+{
+    border: black 1px solid;
+    padding: 40px;
+    padding-top: 30px;
+    width: 30%;
+    margin-top: 5%;
+    margin-bottom: 0;
+}
+
+
+#title
+{
+    text-align: center;
+    margin-top: 70px;
+}
+
+#loginText
+{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#contentDiv
+{
+    border: 3px solid black;
+    padding: 50px;
+    margin-bottom: 50px;
+}
+

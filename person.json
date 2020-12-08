@@ -1,0 +1,13 @@
+{
+    "person": 
+    [
+        {
+            "name": "abhi",
+            "gender": "m"
+        },
+        {
+            "name": "kurama",
+            "gender":"m"
+        }
+    ]
+}
