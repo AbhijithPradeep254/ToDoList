@@ -56,3 +56,9 @@ table, th, td
     margin-bottom: 50px;
 }
 
+#icon
+{
+    height: auto;
+    width: 36px;
+}
+
