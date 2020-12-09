@@ -19,6 +19,11 @@ passEntry = () =>
     return true;
 }
 
+logout = () =>
+{
+    window.location.replace("index.html")
+}
+
 validation = callback =>
 {
     if (userValid() && passValid())

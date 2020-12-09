@@ -1,5 +1,5 @@
- var table = document.getElementById("mainTable") ;
-  var xhttp = new XMLHttpRequest();
+var table = document.getElementById("mainTable") ;
+var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function()
     {
         if (this.readyState == 4 && this.status == 200)
@@ -44,11 +44,9 @@
                 col.innerHTML = col.innerHTML == "true" ? '<input type="checkbox" checked disabled>' : '<input type="checkbox">' ;
             }
 
-            var promise = new Promise(function(resolve, reject)
+            findCount = () =>
             {
-                $("input").change(function()
-                {
-                    var count = 0;
+                var count = 0;
                     for (let i=1; i<table.rows.length; i++)
                     {
                         let row = table.rows[i];
@@ -58,17 +56,23 @@
                             count++;
                         } 
                     }
-                    const limit = count+5;
-                    console.log(limit);
-                    console.log(count);
-                    // if (count >= limit)
-                    // {
-                    //     resolve(alert("Congrats. 5 Tasks have been Successfully Completed"));
-                    // }
-                    // else
-                    // {
-                    //     reject(alert("Please complete more tasks"));
-                    // }
+                return count;
+            }
+
+            var promise = new Promise(function(resolve, reject)
+            {
+                var limit = findCount()+5;
+                $("input").change(function()
+                {
+                    var count = findCount();
+                    if (count >= limit)
+                    {
+                        resolve(alert("Congrats. 5 or More Tasks have been Successfully Completed"));
+                    }
+                    else
+                    {
+                        reject(alert("Please complete more tasks"));
+                    }
                 });
             });
 
@@ -88,6 +92,6 @@
 
         } 
     }
+
     xhttp.open("GET", "https://jsonplaceholder.typicode.com/todos", true);
     xhttp.send();
-    
